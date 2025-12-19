@@ -1,0 +1,104 @@
+.swiper {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 170px;
+    padding-inline: 30px;
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: #191a23;
+    border-radius: 50px;
+
+    &-slide {
+        border: 1px solid #b9ff66; 
+        max-height: 290px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex-direction: column;
+        border-radius: 30px;
+  
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 40px;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            border: 1px solid #b9ff66;
+            clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+            transform: rotate(45deg) translate(0, -65%);
+            transform-origin: center center;
+            z-index: 1;
+        }
+
+        .card__decription {
+            font-size: 20px;
+            line-height: 1.4;
+            padding: 30px;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+            border-radius: 30px;
+            @include mobile {
+                font-size: 14px;
+            }
+        }
+    }
+
+    &-button-prev,
+    &-button-next {
+        --swiper-navigation-size: 22px;
+        --swiper-navigation-top-offset: 96%;
+        --swiper-navigation-sides-offset: 555px;
+        --swiper-navigation-color: white;
+    }
+
+    &-pagination {
+        --swiper-pagination-color: white;
+        --swiper-pagination-left: auto;
+        --swiper-pagination-right: 8px;
+        --swiper-pagination-bottom: 8px;
+        --swiper-pagination-top: auto;
+        --swiper-pagination-fraction-color: inherit;
+        --swiper-pagination-progressbar-bg-color: rgba(255, 255, 255, 0.5);
+        --swiper-pagination-progressbar-size: 4px;
+        --swiper-pagination-bullet-size: 16px;
+        --swiper-pagination-bullet-width: 16px;
+        --swiper-pagination-bullet-height: 16px;
+        --swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.6);
+        --swiper-pagination-bullet-inactive-opacity: 0.2;
+        --swiper-pagination-bullet-opacity: 1;
+        --swiper-pagination-bullet-horizontal-gap: 4px;
+        --swiper-pagination-bullet-vertical-gap: 6px;
+    }
+}
+
+.card__contacts {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateX(56px) translateY(110px);
+    color: white;
+}
+
+.reviews {
+    margin-top: 100px;
+}
+
+.card__name {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #b9ff66;
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper {
+    display: flex;
+    overflow-x: hidden;
+}
