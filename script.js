@@ -1,25 +1,14 @@
 const swiper = new Swiper('.swiper', {
-    spaceBetween: 50,
-    slidesPerView: 2,
-    autoHeight: true,
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
+  spaceBetween: 50,
+  slidesPerView: 2,
+  autoHeight: true,
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
     },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+    992: {
+      slidesPerView: 2,
     },
-    breakpoints: {
-        320: {
-            slidesPerView: 1,
-        },
-        480: {
-            slidesPerView: 1,
-        },
-        992: {
-            slidesPerView: 2,
-        }
-    }
+  },
 });
