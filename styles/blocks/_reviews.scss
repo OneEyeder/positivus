@@ -7,6 +7,7 @@
     margin: 0 auto;
     background-color: #191a23;
     border-radius: 50px;
+    overflow: hidden;
 
     &-slide {
         border: 1px solid #b9ff66; 
@@ -17,7 +18,6 @@
         position: relative;
         flex-direction: column;
         border-radius: 30px;
-  
 
         &::after {
             content: '';
@@ -95,10 +95,72 @@
 }
 
 .swiper-wrapper {
-    display: flex;
+    box-sizing: content-box;
+    transition-property: transform;
 }
 
-.swiper {
+.swiper-slide {
+    flex-shrink: 0;
+}
+
+.swiper-pagination {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.swiper-pagination-bullet {
+    display: inline-block;
+    width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
+    height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
+    background: var(--swiper-pagination-bullet-inactive-color, rgba(0, 0, 0, 0.2));
+    opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
+    border-radius: 50%;
+    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--swiper-pagination-color, #007aff);
+    opacity: var(--swiper-pagination-bullet-opacity, 1);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: var(--swiper-navigation-top-offset, 50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    margin-top: calc(0px - (var(--swiper-navigation-size, 44px) / 2));
     display: flex;
-    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+    color: var(--swiper-navigation-color, #fff);
+}
+
+.swiper-button-prev {
+    left: var(--swiper-navigation-sides-offset, 10px);
+}
+
+.swiper-button-next {
+    right: var(--swiper-navigation-sides-offset, 10px);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+}
+
+.swiper-button-prev::after {
+    transform: rotate(-135deg);
+}
+
+.swiper-button-next::after {
+    transform: rotate(45deg);
 }
